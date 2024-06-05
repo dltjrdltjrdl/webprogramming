@@ -21,7 +21,7 @@ while($row = mysqli_fetch_assoc($result)){
     echo $h_pass, $h_name;
     if($password == $h_pass && $h_name==$username){
         echo 'Login Succeessful.';
-        header('Location: homepage_success.php');
+        header('Location: profile_setup.php');
         exit();
     }
 }

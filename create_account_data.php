@@ -22,6 +22,5 @@ mysqli_query($db,$query) or die(mysqli_error($db));
     <link rel="stylesheet" href="styles.css"> 
     </head>
     <body>
-        
     </body>
 </html>

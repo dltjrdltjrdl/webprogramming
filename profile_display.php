@@ -3,25 +3,26 @@
 $db = mysqli_connect('localhost', 'root', '') or die('Unable to connect to the database');
 mysqli_select_db($db,'song_info') or die(mysqli_error($db));
 
-$searchinfo = mysqli_real_escape_string($db, $_POST['title']);
-
 $query = "SELECT 
-        song_title, song_artist, song_lyrics
-         FROM 
-        song
-         WHERE
-         song_title = '$searchinfo'";
+profile_name,profile_email,profile_intro
+ FROM 
+profile_info 
+ WHERE
+profile_id=1";
 
 $result = mysqli_query($db, $query) or die(mysqli_error($db));
+
 ?>
+
 <html>
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Many Languages Song Lyrics Sharing Web</title>
-    <link rel="stylesheet" href="styles.css"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Many Languages Song Lyrics Sharing Web</title>
+        <link rel="stylesheet" href="styles.css"> 
     </head>
     <body>
+        
     <header>
         <h1>Many Languages Song Lyrics Sharing Web</h1>
         <nav>
@@ -36,23 +37,21 @@ $result = mysqli_query($db, $query) or die(mysqli_error($db));
             </ul>
         </nav>
     </header>
-    <h2>Search result</h2>
-        <table border="1">
+<table border="1">
             <tr>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Lyrics</th>
+                <th>Username</th>
+                <th>User Email</th>
+                <th>Introduction</th>
             </tr>
             <?php
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($row['song_title']) . '</td>';
-                    echo '<td>' . htmlspecialchars($row['song_artist']) . '</td>';
-                    echo '<td>' . nl2br(htmlspecialchars($row['song_lyrics'])) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['profile_name']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['profile_email']) . '</td>';
+                    echo '<td>' . nl2br(htmlspecialchars($row['profile_intro'])) . '</td>';
                     echo '</tr>';
                 }
             ?>
         </table>
-</body>
+    </body>
 </html>
-

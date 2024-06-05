@@ -15,7 +15,7 @@ $query = "INSERT INTO song
 
 mysqli_query($db,$query) or die(mysqli_error($db));
 
-    header('Location: homepage_success.php');
+    header('Location: homepage_setup.php');
 ?>
 <html>
     <head>

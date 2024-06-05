@@ -25,13 +25,12 @@ $result = mysqli_query($db, $query) or die(mysqli_error($db));
         <nav>
             <ul>
                 <li><a href="homepage.php">Home</a></li>
-                <li><a href="browse.php">Browse Songs</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="create_account.php">Create Account</a></li>
             </ul>
         </nav>
     </header>
-    <h2>Recent upload Song Details</h2>
+    <h2>Upload Song Details</h2>
         <table border="1">
             <tr>
                 <th>Title</th>

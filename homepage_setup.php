@@ -24,15 +24,17 @@ $result = mysqli_query($db, $query) or die(mysqli_error($db));
         <h1>Many Languages Song Lyrics Sharing Web</h1>
         <nav>
             <ul>
-                <li><a href="homepage_success.php">Home</a></li>
+                <li><a href="homepage_setup.php">Home</a></li>
                 <li><a href="upload.php">Upload Lyrics</a></li>
                 <li><a href="browse.php">Browse Songs</a></li>
+                <li><a href="profile_display.php">Your Profile</a></li>
+                <li><a href="profile_setup.php">Edit Profile</a></li>
                 <li><a href="homepage.php">Logout</a></li>
                 <li><a href="create_account.php">Create Account</a></li>
             </ul>
         </nav>
     </header>
-    <h2>Recent upload Song Details</h2>
+    <h2>Upload Song Details</h2>
         <table border="1">
             <tr>
                 <th>Title</th>
